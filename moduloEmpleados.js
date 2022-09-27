@@ -13,10 +13,13 @@ var moduloEmpleados=(function() {
         }
     }
     function pagar(){
+        var total=0;
         console.log("\nLiquidando sueldos: ");
-        staff.forEach(empleado => 
+        staff.forEach(empleado => {
             console.log("\n > "+empleado.nombreCompleto() + " - " +empleado.tipoEmpleado+". Honorarios: $"+empleado.calcularMonto())
-        )
+            total+=empleado.calcularMonto();
+        }  )
+        console.log("Total: $"+total);
     }
     function contratados() {
         console.log("\nEn esta empresa trabajan: ");
