@@ -1,5 +1,3 @@
-const moduloEmpleados= require("./moduloEmpleados");
-
 var Factura=(function(){
     var id=1;
     var newFactura = function(vendedor, renglonesN){  //array de renglones (PiezaCant)

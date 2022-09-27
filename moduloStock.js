@@ -1,5 +1,6 @@
 const Factura = require("./factura");
 const PiezaCant = require("./PiezaCant");
+const moduloEmpleados= require("./moduloEmpleados");
 
 var moduloStock = (function(){
     let stock=[]; // arreglo de PiezaCant
@@ -35,9 +36,8 @@ var moduloStock = (function(){
         productos.forEach(value=>{
             i=stock.findIndex(e=>{return e.pieza.tipo==value.pieza.tipo});
             stock[i].cant-=value.cant;
-        })
-
-        let factura =new Factura(vendedor,vendidas);
+        });
+        let factura =new Factura(vendedor,productos);
         return factura;
     }
     function revisar() {
