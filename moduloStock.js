@@ -8,7 +8,7 @@ var moduloStock = (function(){
     function reponer(arrPiezas,arrCant){
         arrPiezas.forEach((pieza,index)=>{
             i=stock.findIndex((element)  =>{return  pieza.tipo==element.pieza.tipo});
-            if (i!=-1){
+            if (i!=-1 && arrCant[index]>0){
                 stock[i].cant+=arrCant[index];
             } else{
                 stock.push(new PiezaCant(pieza,arrCant[index]));

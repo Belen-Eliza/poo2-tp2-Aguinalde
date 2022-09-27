@@ -49,6 +49,7 @@ martillo.precioU=250;
 const piezas =[pintura,engranaje,clavos,martillo];
 
 moduloStock.reponerStock(piezas,[41,58,60,12]);
+moduloStock.reponerStock(piezas,[4,8,4,21]);
 
 var tornillos=Object.create(engranaje);
 tornillos.tipoProducto="caja de tornillos";
