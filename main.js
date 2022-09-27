@@ -22,28 +22,37 @@ moduloEmpleados.llamarReemplazo(norah,50);
 
 var engranaje={
         tipo: "engranaje",
-        precioUnidad: 25
+        precioUnidad: 25,
+        set tipoProducto(producto){
+                this.tipo=producto;
+        },
+        set precioU(precio){
+                if (precio<=0) {
+                      throw new Error("El precio no puede ser negativo o 0.")  ;
+                }
+                this.precioUnidad=precio;
+        }
 }
 
 var pintura=Object.create(engranaje);
-pintura.tipo="lata de pintura";
-pintura.precioUnidad=1000;
+pintura.tipoProducto="lata de pintura";
+pintura.precioU=1000;
 
 var clavos =Object.create(engranaje);
-clavos.tipo="caja de clavos";
-clavos.precioUnidad=50;
+clavos.tipoProducto="caja de clavos";
+clavos.precioU=50;
 
 var martillo=Object.create(engranaje);
-martillo.tipo="martillo";
-martillo.precioUnidad=250;
+martillo.tipoProducto="martillo";
+martillo.precioU=250;
 
 const piezas =[pintura,engranaje,clavos,martillo];
 
 moduloStock.reponerStock(piezas,[41,58,60,12]);
 
 var tornillos=Object.create(engranaje);
-tornillos.tipo="caja de tornillos";
-tornillos.precioUnidad=60;
+tornillos.tipoProducto="caja de tornillos";
+tornillos.precioU=60;
 
 moduloStock.reponerStock([tornillos],[13]);
 moduloStock.revisarStock();
