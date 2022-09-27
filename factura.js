@@ -2,8 +2,7 @@ const moduloEmpleados= require("./moduloEmpleados");
 
 var Factura=(function(){
     var id=1;
-    var newFactura = function(vendedor, renglonesN){  //array de renglones (Piezacant)
-        moduloEmpleados.validar(vendedor);
+    var newFactura = function(vendedor, renglonesN){  //array de renglones (PiezaCant)
         this.identificador=id;
         id++;
         this.vendedor=vendedor;

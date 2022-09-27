@@ -25,13 +25,14 @@ var moduloStock = (function(){
         })  
     }
     function vender(arrPiezas,arrCant,vendedor){
-        const vendidas=[];
+        moduloEmpleados.validar(vendedor);
+        const productos=[];
         arrPiezas.forEach((element,index) => {
-            vendidas.push(new PiezaCant(element,arrCant[index]));
+            productos.push(new PiezaCant(element,arrCant[index]));
         });
         // sacar de stock
-        puedoVender(vendidas);
-        vendidas.forEach(value=>{
+        puedoVender(productos);
+        productos.forEach(value=>{
             i=stock.findIndex(e=>{return e.pieza.tipo==value.pieza.tipo});
             stock[i].cant-=value.cant;
         })
